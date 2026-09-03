@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <p>${game.description}</p>
       <div>
       <span>${game.genre}</span>
-      <span>${game.price}</span>
+      <span>${game.price == 0 ? "Free" : `$${game.price.toFixed(2)}`}</span>
       </div> </div>`;
       list.appendChild(game_card);
     });
