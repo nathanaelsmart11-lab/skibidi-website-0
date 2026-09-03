@@ -18,6 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const dropdown = document.querySelector("#genre-dropdown");
 
+  const favoritesOnly = document.querySelector("#favorites-only");
+  favoritesOnly.addEventListener("change", applyFilters);
+
   function renderGenreOptions(gamesList) {
     const uniqueGenres = new Array();
 
@@ -64,6 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (query) {
       filteredGames = filteredGames.filter((game) =>
         game.title.toLowerCase().includes(query),
+      );
+    }
+
+    if (favoritesOnly.checked) {
+      filteredGames = filteredGames.filter((game) =>
+        favorites.includes(game.id),
       );
     }
 
