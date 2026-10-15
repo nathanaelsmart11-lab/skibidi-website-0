@@ -44,11 +44,11 @@
           name="search"
           placeholder="game name here"
         />
-        <label for="genre">Chose a game genre :</label>
+        <label for="genre-dropdown">Chose a game genre :</label>
         <select name="genre" id="genre-dropdown">
           <option value="all">show all games :D</option>
         </select>
-        <label for="store">Chose a game store :</label>
+        <label for="store-dropdown">Chose a game store :</label>
         <select name="store" id="store-dropdown">
           <option value="all">show all games from store</option>
         </select>
@@ -70,6 +70,7 @@
           <input type="checkbox" id="favorites-only" /> Only show my favorites
         </label>
         <button id="game-loader" class="button">Games :O</button>
+        <button id="random-game" class="button">random game</button>
         <div id="list"></div>
       </form>
 

@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let count = 0;
 
+  let filteredGames = games;
+
   const countBtn = document.querySelector("#count-btn");
 
   const display = document.querySelector("#count-display");
@@ -15,6 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const loadBtn = document.querySelector("#game-loader");
+
+  const randomGameBtn = document.querySelector("#random-game");
 
   const dropdown = document.querySelector("#genre-dropdown");
 
@@ -85,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchBox = document.querySelector("#search");
 
   function applyFilters() {
-    let filteredGames = games;
+    filteredGames = games;
     const query = searchBox.value.toLowerCase();
 
     console.log(query);
@@ -188,5 +192,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const star = event.target.closest(".favorite-btn");
     if (!star) return;
     toggleFavorite(Number(star.dataset.id));
+  });
+
+  randomGameBtn.addEventListener("click", (event) => {
+    let randomGame =
+      filteredGames[Math.floor(Math.random() * filteredGames.length)];
+    renderGames([randomGame]);
   });
 });
