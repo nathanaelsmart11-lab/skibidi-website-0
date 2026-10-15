@@ -53,8 +53,18 @@
           <option value="all">show all games from store</option>
         </select>
         <div>
-          <label for="price">prive</label>
-          <input name="price" type="range" min="0" />
+          <label for="max-price" id="price-label"
+            >max price <span id="max-price-display">$70</span></label
+          >
+          <input
+            name="max-price"
+            id="max-price"
+            type="range"
+            min="0"
+            max="70"
+            step="5"
+            value="70"
+          />
         </div>
         <label for="favorites-only">
           <input type="checkbox" id="favorites-only" /> Only show my favorites
